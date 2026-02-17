@@ -32,7 +32,7 @@ def start_night_shift():
         session.close()
 
         # Анти-бан пауза
-        wait = random.uniform(2, 8)
+        wait = random.uniform(2, 3)
         print(f"Готово. Жду {wait:.1f} сек...")
         time.sleep(wait)
 
