@@ -19,7 +19,7 @@ def collect_roster(base_url, pages=5):
             try:
                 driver.get(url)
                 # Ожидание прогрузки динамического контента
-                time.sleep(random.uniform(4, 6))
+                time.sleep(random.uniform(1, 3))
 
                 # Ищем контейнеры (карточки), а не все ссылки подряд
                 cards = driver.find_elements(By.CSS_SELECTOR, "article[data-name='CardComponent']")
@@ -69,7 +69,7 @@ def collect_roster(base_url, pages=5):
 
 if __name__ == "__main__":
     # Ссылка на выдачу (пример для Ростова)
-    TARGET_URL = "https://rostov.cian.ru/cat.php?deal_type=sale&engine_version=2&offer_type=flat&region=4959"
+    TARGET_URL = "https://rostov.cian.ru/cat.php?currency=2&deal_type=sale&engine_version=2&maxprice=7000000&minprice=6500000&offer_type=flat&region=4959&sort=creation_date_asc"
 
     print("Запуск ночного коллектора...")
-    collect_roster(TARGET_URL, pages=10)
+    collect_roster(TARGET_URL, pages=100)
